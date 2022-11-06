@@ -15,7 +15,9 @@ const BookSearch = ({allBooks,updateAllBooks}) => {
             const checkItem = allBooks.find(book => book.id === item.id)
             if (checkItem) {
               item.shelf = checkItem.shelf
-            }
+            }  else {
+              item.shelf = "none"
+          }
           return item
         })
       setSearchResults(data)
@@ -31,7 +33,7 @@ const BookSearch = ({allBooks,updateAllBooks}) => {
     return (
         <div>
           <div className="search-books-bar">
-            <Link to="/"></Link>
+            <Link className="close-search" to="/"></Link>
             <div className="search-books-input-wrapper">
                 <form action="">
               <input
